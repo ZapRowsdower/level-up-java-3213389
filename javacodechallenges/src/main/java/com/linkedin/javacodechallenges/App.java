@@ -4,7 +4,14 @@ import java.util.List;
 
 public class App {
     public static double calculateAverageChangeInvested(List<Double> purchases) {
-        return 0;
+        double result = 0;
+        if(purchases.size() == 0) {
+            return result;
+        }
+        for (double purchase : purchases) {
+            result += (Math.ceil(purchase) - purchase);
+        }
+        return result / purchases.size();
     }
 
     public static void main(String[] args) {
